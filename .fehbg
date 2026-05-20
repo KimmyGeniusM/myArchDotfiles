@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/eVan/Downloads/wallhaven-85eqe2.png' 

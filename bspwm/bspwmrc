@@ -1,0 +1,39 @@
+#! /bin/sh
+
+picom &
+dunst &
+feh --bg-scale ~/Downloads/wallhaven-85eqe2.png &
+pkill -q polybar
+polybar example &
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+
+bspc config border_width         2
+bspc config window_gap           9
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config bottom_padding      28
+bspc config normal_border_color "#2F0D14"
+bspc config focused_border_color "#D67A8A"
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+# screensaver
+xset s 300 300
+killall -q xss-lock; xss-lock -- i3lock -B 5 \
+    --clock --indicator \
+    --inside-color=D67A8A1A --ring-color=2F0D14FF \
+    --insidever-color=D67A8A1A --ringver-color=D67A8AFF \
+    --insidewrong-color=D67A8A1A --ringwrong-color=6E5257FF \
+    --keyhl-color=3D141DFF --bshl-color=6E5257FF \
+    --time-color=F5E6E8FF --date-color=F5E6E8FF \
+    --time-str="%H:%M" --date-str="%d %B %Y" \
+    --verif-text="" --wrong-text=""
