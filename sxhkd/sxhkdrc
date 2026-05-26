@@ -137,6 +137,14 @@ XF86AudioLowerVolume
 XF86AudioMute
     pamixer -t
 
+# Tombol Naik: Bergilir menerangkan layar
+XF86MonBrightnessUp
+    xrandr --output LVDS1 --brightness {0.2,0.4,0.6,0.8,1.0}
+
+# Tombol Turun: Bergilir meredupkan layar
+XF86MonBrightnessDown
+    xrandr --output LVDS1 --brightness {1.0,0.8,0.6,0.4,0.2}
+
 # screenshot fullscreen
 Print
     maim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send "Screenshot saved"
@@ -164,3 +172,7 @@ super + shift + x
     --time-color=F5E6E8FF --date-color=F5E6E8FF \
     --time-str="%H:%M" --date-str="%d %B %Y" \
     --verif-text="" --wrong-text=""
+
+# Clipboard manager (Greenclip + Rofi)
+super + alt + c
+    rofi -modi "clipboard:greenclip" -show clipboard -run-command '{cmd}'
