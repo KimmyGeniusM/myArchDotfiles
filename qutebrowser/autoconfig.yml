@@ -6,21 +6,5 @@
 
 config_version: 2
 settings:
-  bindings.commands:
-    global:
-      normal:
-        ',m': spawn mpv --ytdl-format="bestvideo[height<=480]+bestaudio/best" {url}
-  editor.command:
-    global:
-    - alacritty
-    - -e
-    - nvim
-    - '{}'
-  url.default_page:
-    global: https://google.com
-  url.searchengines:
-    global:
-      DEFAULT: https://google.com/search?q={}
-  url.start_pages:
-    global:
-    - https://google.com
+  content.javascript.clipboard:
+    https://gemini.google.com: access-paste
