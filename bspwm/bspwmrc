@@ -5,6 +5,7 @@ dunst &
 feh --bg-scale ~/Downloads/wallhaven-85eqe2.png &
 pkill -q polybar
 polybar example &
+greenclip daemon &
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -37,3 +38,4 @@ killall -q xss-lock; xss-lock -- i3lock -B 5 \
     --time-color=F5E6E8FF --date-color=F5E6E8FF \
     --time-str="%H:%M" --date-str="%d %B %Y" \
     --verif-text="" --wrong-text=""
+# test symlink
